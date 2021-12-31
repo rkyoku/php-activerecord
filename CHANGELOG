@@ -1,3 +1,6 @@
+Version 1.0.1 - 2022-01-01
+- PHP8 support
+
 Version 1.0 - June 27, 2010
 
 - d2bed65 fixed an error with eager loading when no records exist
