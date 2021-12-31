@@ -1,7 +1,7 @@
 {
     "name": "rkyoku/php-activerecord",
     "type": "library",
-    "description": "php-activerecord (fixed for PHP 7.4) is an open source ORM library based on the ActiveRecord pattern.",
+    "description": "php-activerecord (fixed for PHP 8) is an open source ORM library based on the ActiveRecord pattern.",
     "keywords": ["activerecord", "orm"],
     "homepage": "https://github.com/rkyoku/php-activerecord",
     "license": "MIT",
