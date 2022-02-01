@@ -84,7 +84,7 @@ class DateTime extends \DateTime implements DateTimeInterface
 	 * @param string $format A format string accepted by get_format()
 	 * @return string formatted date and time string
 	 */
-	public function format($format=null)
+	public function format($format)
 	{
 		return parent::format(self::get_format($format));
 	}
@@ -117,7 +117,7 @@ class DateTime extends \DateTime implements DateTimeInterface
 	 * This needs to be overriden so it returns an instance of this class instead of PHP's \DateTime.
 	 * See http://php.net/manual/en/datetime.createfromformat.php
 	 */
-	public static function createFromFormat($format, $time, $tz = null)
+	public static function createFromFormat($format, $time, ?DateTimeZone $tz = null)
 	{
 		$phpDate = $tz ? parent::createFromFormat($format, $time, $tz) : parent::createFromFormat($format, $time);
 		if (!$phpDate)
@@ -183,7 +183,7 @@ class DateTime extends \DateTime implements DateTimeInterface
 		return parent::setTimezone($timezone);
 	}
 	
-	public function modify($modify)
+	public function modify(string $modify) : \DateTime|false
 	{
 		$this->flag_dirty();
 		return parent::modify($modify);
