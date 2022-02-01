@@ -153,25 +153,25 @@ class DateTime extends \DateTime implements DateTimeInterface
 			$this->model->flag_dirty($this->attribute_name);
 	}
 
-	public function setDate($year, $month, $day)
+	public function setDate(int $year, int $month, int $day) : \DateTime
 	{
 		$this->flag_dirty();
 		return parent::setDate($year, $month, $day);
 	}
 
-	public function setISODate($year, $week , $day = 1)
+	public function setISODate(int $year, int $week , $day = 1) : \DateTime
 	{
 		$this->flag_dirty();
 		return parent::setISODate($year, $week, $day);
 	}
 
-	public function setTime($hour, $minute, $second = 0, $microseconds = 0)
+	public function setTime(int $hour, int $minute, int $second = 0, int $microseconds = 0) : \DateTime
 	{
 		$this->flag_dirty();
 		return parent::setTime($hour, $minute, $second);
 	}
 
-	public function setTimestamp($unixtimestamp)
+	public function setTimestamp(int $unixtimestamp) : \DateTime
 	{
 		$this->flag_dirty();
 		return parent::setTimestamp($unixtimestamp);
