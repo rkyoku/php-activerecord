@@ -130,7 +130,7 @@ class DateTime extends \DateTime implements DateTimeInterface
 
 	public function __toString()
 	{
-		return $this->format();
+		return $this->format(self::$DEFAULT_FORMAT);
 	}
 
 	/**
