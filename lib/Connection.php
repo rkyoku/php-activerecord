@@ -473,6 +473,10 @@ abstract class Connection
 	 */
 	public function datetime_to_string($datetime)
 	{
+		// 2022-06-26 : Just in case getting rid of DateTime works, and we get a string here (but the method should no longer be called in a perfect world)
+		if (is_string($datetime)
+			return $datetime;
+		
 		return $datetime->format(static::$datetime_format);
 	}
 
@@ -484,6 +488,9 @@ abstract class Connection
 	 */
 	public function string_to_datetime($string)
 	{
+		// 2022-06-26 : Get rid of DateTime
+		return $string;
+		/*
 		$date = date_create($string);
 		$errors = \DateTime::getLastErrors();
 
@@ -497,6 +504,7 @@ abstract class Connection
 			$date->format(static::DATETIME_TRANSLATE_FORMAT),
 			$date->getTimezone()
 		);
+		*/
 	}
 
 	/**
