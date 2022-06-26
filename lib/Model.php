@@ -464,12 +464,16 @@ class Model
 		// convert php's \DateTime to ours
 		if ($value instanceof \DateTime) {
 			$date_class = Config::instance()->get_date_class();
+			// 2022-06-26 : Get rid of DateTime...
+			$value = $value->format('Y-m-d H:i:s');
+			/*
 			if (!($value instanceof $date_class))
 				$value = $date_class::createFromFormat(
 					Connection::DATETIME_TRANSLATE_FORMAT,
 					$value->format(Connection::DATETIME_TRANSLATE_FORMAT),
 					$value->getTimezone()
 				);
+			*/
 		}
 
 		if ($value instanceof DateTimeInterface)
