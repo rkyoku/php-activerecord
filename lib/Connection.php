@@ -474,7 +474,7 @@ abstract class Connection
 	public function datetime_to_string($datetime)
 	{
 		// 2022-06-26 : Just in case getting rid of DateTime works, and we get a string here (but the method should no longer be called in a perfect world)
-		if (is_string($datetime)
+		if (is_string($datetime))
 			return $datetime;
 		
 		return $datetime->format(static::$datetime_format);
