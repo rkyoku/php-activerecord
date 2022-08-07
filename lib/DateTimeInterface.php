@@ -31,5 +31,5 @@ interface DateTimeInterface
 	/**
 	 * See http://php.net/manual/en/datetime.createfromformat.php
 	 */
-	public static function createFromFormat(string $format, string $time, ?\DateTimeZone $tz = null) : \DateTime|false;
+	public static function createFromFormat(string $format, string $time, ?\DateTimeZone $tz = null);
 }
