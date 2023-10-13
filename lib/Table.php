@@ -104,7 +104,7 @@ class Table
 	public function reestablish_connection($close=true)
 	{
 		// if connection name property is null the connection manager will use the default connection
-		$connection = $this->class->getStaticPropertyValue('connection',null);
+		$connection = $this->class->getStaticPropertyValue('connection',null) ?: null;
 
 		if ($close)
 		{
