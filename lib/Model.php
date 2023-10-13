@@ -85,49 +85,49 @@ class Model
 	 *
 	 * @var array
 	 */
-	private $attributes = array();
+	private array $attributes = array();
 
 	/**
 	 * Flag whether or not this model's attributes have been modified since it will either be null or an array of column_names that have been modified
 	 *
 	 * @var array
 	 */
-	private $__dirty = null;
+	private ?array $__dirty = null;
 
 	/**
 	 * Flag that determines of this model can have a writer method invoked such as: save/update/insert/delete
 	 *
 	 * @var boolean
 	 */
-	private $__readonly = false;
+	private bool $__readonly = false;
 
 	/**
 	 * Array of relationship objects as model_attribute_name => relationship
 	 *
 	 * @var array
 	 */
-	private $__relationships = array();
+	private array $__relationships = array();
 
 	/**
 	 * Flag that determines if a call to save() should issue an insert or an update sql statement
 	 *
 	 * @var boolean
 	 */
-	private $__new_record = true;
+	private bool $__new_record = true;
 
 	/**
 	 * Set to the name of the connection this {@link Model} should use.
 	 *
 	 * @var string
 	 */
-	static $connection;
+	static string $connection;
 
 	/**
 	 * Set to the name of the database this Model's table is in.
 	 *
 	 * @var string
 	 */
-	static $db;
+	static string $db;
 
 	/**
 	 * Set this to explicitly specify the model's table name if different from inferred name.
@@ -137,35 +137,35 @@ class Model
 	 *
 	 * @var string
 	 */
-	static $table_name;
+	static string $table_name;
 
 	/**
 	 * Set this to override the default primary key name if different from default name of "id".
 	 *
 	 * @var string
 	 */
-	static $primary_key;
+	static string $primary_key;
 
 	/**
 	 * Set this to explicitly specify the sequence name for the table.
 	 *
 	 * @var string
 	 */
-	static $sequence;
+	static string $sequence;
 
 	/**
 	 * Set this to true in your subclass to use caching for this model.
 	 * Note that you must also configure a cache object.
 	 */
-	static $cache = false;
+	static bool $cache = false;
 
 	/**
 	 * Set this to specify an expiration period for this model.
 	 * If not set, the expire value you set in your cache options will be used.
 	 *
-	 * @var integer
+	 * @var ?integer
 	 */
-	static $cache_expire;
+	static ?int $cache_expire = null;
 
 	/**
 	 * Allows you to create aliases for attributes.
@@ -184,7 +184,7 @@ class Model
 	 *
 	 * @var array
 	 */
-	static $alias_attribute = array();
+	static array $alias_attribute = array();
 
 	/**
 	 * Whitelist of attributes that are checked from mass-assignment calls such as constructing a model or using update_attributes.
@@ -206,7 +206,7 @@ class Model
 	 *
 	 * @var array
 	 */
-	static $attr_accessible = array();
+	static array $attr_accessible = array();
 
 	/**
 	 * Blacklist of attributes that cannot be mass-assigned.
@@ -218,7 +218,7 @@ class Model
 	 *
 	 * @var array
 	 */
-	static $attr_protected = array();
+	static array $attr_protected = array();
 
 	/**
 	 * Delegates calls to a relationship.
@@ -242,7 +242,7 @@ class Model
 	 *
 	 * @var array
 	 */
-	static $delegate = array();
+	static array $delegate = array();
 
 	/**
 	 * Constructs a model.
