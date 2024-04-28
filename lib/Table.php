@@ -33,6 +33,11 @@ class Table
 	/**
 	 * Name of the database (optional)
 	 */
+	public $db = null;
+
+	/**
+	 * Name of the database (optional)
+	 */
 	public $db_name;
 
 	/**
