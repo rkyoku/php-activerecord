@@ -474,7 +474,10 @@ class Table
 			$this->table = $parts[count($parts)-1];
 		}
 
-		if (($db = $this->class->getStaticPropertyValue('db',null)) || ($db = $this->class->getStaticPropertyValue('db_name',null)))
+		$db = null;
+		if ($db = $this->class->getStaticPropertyValue('db',null))
+			$this->db_name = $db;
+		else if ($db = $this->class->getStaticPropertyValue('db_name',null))
 			$this->db_name = $db;
 	}
 
