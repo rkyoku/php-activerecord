@@ -33,11 +33,6 @@ class Table
 	/**
 	 * Name of the database (optional)
 	 */
-	public $db = null;
-
-	/**
-	 * Name of the database (optional)
-	 */
 	public $db_name;
 
 	/**
@@ -479,11 +474,7 @@ class Table
 			$this->table = $parts[count($parts)-1];
 		}
 
-		$db = null;
-		$tmp = $this->class->getStaticPropertyValue('db',null);
-		if ($tmp)
-			$this->db_name = $tmp;
-		else if ($db = $this->class->getStaticPropertyValue('db_name',null))
+		if (($db = $this->class->getStaticPropertyValue('db',null) ?? '') || ($db = $this->class->getStaticPropertyValue('db_name',null) ?? '')
 			$this->db_name = $db;
 	}
 
