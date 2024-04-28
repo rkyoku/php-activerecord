@@ -480,8 +480,9 @@ class Table
 		}
 
 		$db = null;
-		if ($db = $this->class->getStaticPropertyValue('db',null))
-			$this->db_name = $db;
+		$tmp = $this->class->getStaticPropertyValue('db',null);
+		if ($tmp)
+			$this->db_name = $tmp;
 		else if ($db = $this->class->getStaticPropertyValue('db_name',null))
 			$this->db_name = $db;
 	}
